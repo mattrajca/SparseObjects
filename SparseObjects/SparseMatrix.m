@@ -59,7 +59,7 @@ _Static_assert(sizeof(void *) <= sizeof(sparse_pointer_storage), "Our pointers w
 	for (NSInteger row = 0; row < rows; row++) {
 		if (sparse_get_matrix_nonzero_count_for_row(_matrix, row) > 0) {
 			sparse_index columnEnd = 0;
-			sparse_extract_sparse_row_double(_matrix, row, 0, &columnEnd, columns, columnSpace, indices);
+			sparse_pointer_matrix_extract(_matrix, row, 0, &columnEnd, columns, columnSpace, indices);
 
 			for (NSInteger column = 0; column < columns; column++) {
 				[(id)((sparse_pointer_storage_int)columnSpace[column]) release];
