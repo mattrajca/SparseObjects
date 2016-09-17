@@ -36,6 +36,10 @@ _Static_assert(sizeof(void *) <= sizeof(sparse_pointer_storage), "Our pointers w
 
 - (instancetype)initWithRows:(NSInteger)rows columns:(NSInteger)columns
 {
+	if (rows == 0 || columns == 0) {
+		@throw [NSException exceptionWithName:NSInvalidArgumentException reason:@"A sparse matrix must have at least one entry" userInfo:nil];
+	}
+
 	if (!(self = [super init])) {
 		return nil;
 	}
