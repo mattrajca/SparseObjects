@@ -15,7 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (instancetype)init NS_UNAVAILABLE;
 + (instancetype)new NS_UNAVAILABLE;
 
-- (instancetype)initWithRows:(NSInteger)rows columns:(NSInteger)columns;
+- (instancetype)initWithRows:(NSInteger)rows columns:(NSInteger)columns NS_DESIGNATED_INITIALIZER;
 
 - (void)setObject:(id)object atRow:(NSInteger)row column:(NSInteger)column;
 - (nullable id)objectAtRow:(NSInteger)row column:(NSInteger)column;
